@@ -12,6 +12,9 @@ class BaseContact:
 
     def __str__(self):
         return f'{self.name} {self.second_name} {self.home_number} {self.email}'
+    
+    def __repr__(self):
+        return f'name={self.name}, second name ={self.second_name}, home number={self.home_number}, email={self.email}.'
 
     def contact(self):
         return f'Wybieram numer {self.home_number} i dzwonię do {self.name} {self.second_name}'
@@ -33,6 +36,9 @@ class BusinessContact(BaseContact):
     
     def __str__(self):
         return f'{self.name} {self.second_name} {self.company} {self.job} {self.business_number} {self.email}'
+    
+    def __repr__(self):
+        return  f'name={self.name}, second name ={self.second_name}, company={self.company}, job={self.job}, business number={self.home_number}, email={self.email}.'
 
 
 
@@ -62,9 +68,14 @@ def create_contacts(card_class, quantity):
                                    company = contact_company,
                                    job = contact_job)
             
-        contact_list.append(print(card))
-        
+        contact_list.append(card)
+    for i in contact_list:
+        print(i)
 
-create_contacts('base', 5)
+if __name__ == '__main__':
+    create_contacts('base', 3)
+    create_contacts('business', 3)
+
+
     
 
