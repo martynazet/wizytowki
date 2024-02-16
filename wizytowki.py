@@ -35,20 +35,6 @@ class BusinessContact(BaseContact):
         return f'{self.name} {self.second_name} {self.company} {self.job} {self.business_number} {self.email}'
 
 
-person1 = BaseContact(name="Joel",
-                    second_name="Nick",
-                    home_number="+0487536584",
-                    email="jnick@apple.com")
-
-person2 = BusinessContact(name="Juanita",
-                    second_name="Smith",
-                    company="Crafts Canada",
-                    job="nurse",
-                    home_number = '+0485855555',
-                    business_number = '+004826568888',
-                    email="JuanitaMShinn@rhyta.com")
-
-
 
 def create_contacts(card_class, quantity):
     contact_list = []
