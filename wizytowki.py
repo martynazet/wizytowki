@@ -9,6 +9,7 @@ class BaseContact:
         self.second_name = second_name
         self.home_number = home_number
         self.email = email
+        self._label_length = len(self.name) + 1 + len(self.second_name)
 
     def __str__(self):
         return f'{self.name} {self.second_name} {self.home_number} {self.email}'
@@ -21,8 +22,7 @@ class BaseContact:
 
     @property
     def label_length(self):
-        length = len(self.name) + 1 + len(self.second_name)
-        return length
+        return self._label_length
 
 class BusinessContact(BaseContact):
     def __init__(self, company, job, business_number, *args, **kwargs):   
@@ -75,6 +75,9 @@ def create_contacts(card_class, quantity):
 if __name__ == '__main__':
     create_contacts('base', 3)
     create_contacts('business', 3)
+    
+   
+    
 
 
     
